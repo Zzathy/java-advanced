@@ -14,21 +14,21 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        String nim;
-        int code, loop = 0;
+        String nim = "202110370311297", code;
+        int loop = 0;
 
         do {
             System.out.print("Input NIM : ");
             try {
                 nim = input.nextLine();
                 if (nim.length() == 15) {
-                    code = Integer.parseInt(nim.substring(4, 12));
-                    if (code != 10370311) {
-                        loop = 1;
-                        throw new Exception("Format NIM salah");
-                    } else {
+                    code = nim.substring(4, 12);
+                    if (code.equals("10370311")) {
                         loop = 0;
                         System.out.println("NIM Benar");
+                    } else {
+                        loop = 1;
+                        throw new Exception("Kode NIM salah");
                     }
                 } else {
                     loop = 1;
