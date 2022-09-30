@@ -14,15 +14,14 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        String nim = "202110370311297", code;
         int loop = 0;
 
         do {
             System.out.print("Input NIM : ");
             try {
-                nim = input.nextLine();
+                String nim = input.nextLine();
                 if (nim.length() == 15) {
-                    code = nim.substring(4, 12);
+                    String code = nim.substring(4, 12);
                     if (code.equals("10370311")) {
                         loop = 0;
                         System.out.println("NIM Benar");
