@@ -18,8 +18,8 @@ public class Main {
 
         do {
             System.out.print("Input NIM : ");
+            String nim = input.nextLine();
             try {
-                String nim = input.nextLine();
                 if (nim.length() == 15) {
                     String code = nim.substring(4, 12);
                     if (code.equals("10370311")) {
