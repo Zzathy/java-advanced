@@ -21,8 +21,10 @@ public class Main {
             String nim = input.nextLine();
             try {
                 if (nim.length() == 15) {
-                    String code = nim.substring(4, 12);
-                    if (code.equals("10370311")) {
+                    // // we can try with contains method
+                    // if (nim.contains("10370311")) {
+                    // substring have a chance of error if you input less than 4, 12 index
+                    if (nim.substring(4, 12).equals("10370311")) {
                         loop = 0;
                         System.out.println("NIM Benar");
                     } else {
