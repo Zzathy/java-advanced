@@ -20,20 +20,25 @@ public class Main {
             System.out.print("Input NIM : ");
             String nim = input.nextLine();
             try {
-                if (nim.length() == 15) {
-                    // // we can try with contains method
-                    // if (nim.contains("10370311")) {
-                    // substring have a chance of error if you input less than 4, 12 index
-                    if (nim.substring(4, 12).equals("10370311")) {
-                        loop = 0;
-                        System.out.println("NIM Benar");
+                if (nim.matches("[0-9]+")) {
+                    if (nim.length() == 15) {
+                        // // we can try with contains method
+                        // if (nim.contains("10370311")) {
+                        // substring have a chance of error if you input less than 4, 12 index
+                        if (nim.substring(4, 12).equals("10370311")) {
+                            loop = 0;
+                            System.out.println("NIM Benar");
+                        } else {
+                            loop = 1;
+                            throw new Exception("Kode NIM salah");
+                        }
                     } else {
                         loop = 1;
-                        throw new Exception("Kode NIM salah");
+                        throw new Exception("Panjang NIM lebih/kurang dari 15");
                     }
                 } else {
                     loop = 1;
-                    throw new Exception("Panjang NIM lebih/kurang dari 15");
+                    throw new Exception("Inputan harus angka");
                 }
             } catch (Exception e) {
                 System.out.println(e);
