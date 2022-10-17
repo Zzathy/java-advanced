@@ -4,6 +4,8 @@
  */
 package Task2;
 
+import java.util.Scanner;
+
 /**
  *
  * @author izzai
@@ -15,7 +17,8 @@ public class Main {
 
     void cekDate(int date) {
         if (date < 2018 || date > 2022) {
-
+            System.out.println("Years is invalid");
+            System.out.println("Please input years between 2018-2022");
         }
     }
 
