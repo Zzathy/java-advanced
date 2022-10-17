@@ -9,9 +9,9 @@ package Task2;
  * @author izzai
  */
 public class Main {
-    String book[10][100]=
-    {{"This is Book, Malang. 2022"}};String place[][10]=
-    {{"Malang"}, {"Bandung"}, {"Surabaya"}};
+    String[] book = new String[1];
+    String[] place = new String[1];
+    int[] date = new int[1];
 
     void cekDate(int date) {
         if (date < 2018 || date > 2022) {
