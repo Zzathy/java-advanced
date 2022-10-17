@@ -9,14 +9,9 @@ package Task2;
  * @author izzai
  */
 public class Main {
-    void cekName(char name),
-
-    cekFrom(char from),
-
-    cekDate(int date), list();
-
-        String book[10][100] = {{"This is Book, Malang. 2022"}};
-        String place[][10] = {{"Malang"}, {"Bandung"}, {"Surabaya"}};
+    String book[10][100]=
+    {{"This is Book, Malang. 2022"}};String place[][10]=
+    {{"Malang"}, {"Bandung"}, {"Surabaya"}};
 
     void cekDate(int date) {
         if (date < 2018 || date > 2022) {
