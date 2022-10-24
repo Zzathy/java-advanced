@@ -20,6 +20,7 @@ public class Main {
         int loop2 = 0;
         int loop3 = 0;
 
+        // Not yet give exception so input just character
         System.out.print("Input Nama\t: ");
         name = input.nextLine();
 
@@ -71,6 +72,7 @@ public class Main {
                 try {
                     System.out.print("Input Tlp\t: ");
                     phn = input.nextLine();
+                    // Not yet give exception so input just number
                     if (phn.length() >= 10 && phn.length() <= 12) {
                         loop3 = 1;
                         System.out.print("\033[H\033[2J");

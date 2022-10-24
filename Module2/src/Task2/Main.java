@@ -11,54 +11,75 @@ import java.util.Scanner;
  * @author izzai
  */
 public class Main {
-    String[] book = new String[1];
-    String[] place = new String[1];
-    int[] date = new int[1];
 
-    void cekDate(int date) {
+    static String[][] book = new String[1][100];
+    static String[][] place = new String[1][100];
+
+    static void checkDate(int date) {
         if (date < 2018 || date > 2022) {
-            System.out.println("Years is invalid");
+            System.out.println("Invalid Years");
             System.out.println("Please input years between 2018-2022");
         }
     }
 
-    void cekFrom(char from) {
-        for (int i = 0; place[i][0] != "\0"; i++) {
-            if (from.compareTo(place[i]) == 0) {
-                return i;
+    static void checkFrom(String from) {
+        for (int i = 0; place[0][i] != null; i++) {
+            if (from.compareTo(place[0][i]) == 0) {
+                return;
             }
         }
     }
 
-    void cekName(char name) {
-        for (int i = 0; book[i][0] != "\0"; i++) {
-            if (name.compareTo(book[i]) == 0) {
-                return i;
+    static void checkName(String name) {
+        for (int i = 0; place[0][i] != null; i++) {
+            if (name.compareTo(place[0][i]) == 0) {
+                return;
+            }
+        }
+
+    }
+
+    static void addBook(String name) {
+        for (int i = 0; i < book.length; i++) {
+            if (book[0][i] != null) {
+                book[0][i] = name;
             }
         }
     }
 
-    void list() {
-        for (int i = 0; book[i][0] != "\0"; i++) {
-            System.out.println(book[i]);
+    static void list() {
+        for (int i = 0; i < book.length; i++) {
+            if (book[0][i] != null) {
+                System.out.println((book[0][i]));
+            }
         }
     }
 
     public static void main(String[] args) {
-        char inName, inFrom, inDate;
-        int inIndex;
+        Scanner input = new Scanner(System.in);
 
-        System.out.println("Welcome to Libary");
-        System.out.println("Nama : ");
+        String inName, inFrom, inDate, finalBook;
+
+        System.out.println("welcome to library");
+        list();
+
+        System.out.print("Name : ");
         inName = input.nextLine();
-        cekName(inName);
-        System.out.println("From : ");
-        inName = input.nextLine();
-        System.out.println("Date : ");
-        inDate = input.nextInt();
-        cekDate(inDate);
-        System.out.println(inName + "" + inFrom + "" + inDate);
-        book[1] = new String(name);
+        checkName(inName);
+        System.out.print("From : ");
+        inFrom = input.nextLine();
+        checkFrom(inFrom);
+        System.out.print("Date : ");
+        inDate = input.nextLine();
+        checkDate(Integer.parseInt(inDate));
+
+        System.out.println(inName + " " + inFrom + " " + inDate);
+        finalBook = inName + ", " + inFrom + ", " + inDate;
+        addBook(finalBook);
+
         System.out.println("Buku berhasil ditambahkan");
+
+        list();
+
     }
-}
+} 
