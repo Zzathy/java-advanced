@@ -10,6 +10,7 @@ package Task3;
  */
 public class Main {
     static boolean isCube(long input) {
-        return (Math.round(Math.cbrt(input)) * Math.round(Math.cbrt(input)) * Math.round(Math.cbrt(input))) == input;
+        final long round = Math.round(Math.cbrt(input));
+        return (round * round * round) == input;
     }
 }
